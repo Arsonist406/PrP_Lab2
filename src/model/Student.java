@@ -1,4 +1,4 @@
-package student;
+package model;
 
 import java.time.LocalDate;
 
@@ -10,10 +10,12 @@ public class Student {
     private LocalDate date_of_birth;
     private String address;
     private long telephone_number;
+    private String faculty;
     private int course;
     private String group;
 
-    public Student(long student_id, String surname, String name, String father_name, LocalDate date_of_birth, String address, long telephone_number, int course, String group) {
+    public Student(long student_id, String surname, String name, String father_name,
+                   LocalDate date_of_birth, String address, long telephone_number, String faculty, int course, String group) {
         this.student_id = student_id;
         this.surname = surname;
         this.name = name;
@@ -21,10 +23,11 @@ public class Student {
         this.date_of_birth = date_of_birth;
         this.address = address;
         this.telephone_number = telephone_number;
+        this.faculty = faculty;
         this.course = course;
         this.group = group;
     }
-    /************************************************************/
+    /*****************************************************************************************************************/
     public void setStudent_id(long student_id) {
         this.student_id = student_id;
     }
@@ -53,6 +56,10 @@ public class Student {
         this.telephone_number = telephone_number;
     }
 
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
     public void setCourse(int course) {
         this.course = course;
     }
@@ -60,7 +67,7 @@ public class Student {
     public void setGroup(String group) {
         this.group = group;
     }
-    /*************************************************************/
+    /*****************************************************************************************************************/
     public long getStudent_id() {
         return student_id;
     }
@@ -89,6 +96,10 @@ public class Student {
         return telephone_number;
     }
 
+    public String getFaculty() {
+        return faculty;
+    }
+
     public int getCourse() {
         return course;
     }
@@ -96,8 +107,13 @@ public class Student {
     public String getGroup() {
         return group;
     }
-    /**********************************************************/
-
+    /*****************************************************************************************************************/
+    public String toString() {
+        return "\nStudent\nID: " + getStudent_id() + "\nSurname: " + getSurname() + "\nName: " + getName() +
+                "\nFathers name: " + getFather_name() + "\nDate of birth: " + getDate_of_birth() +
+                "\nAddress: " + getAddress() + "\nTelephone number: " + getTelephone_number() +
+                "\nFaculty: " + getFaculty() + "\nCourse: " + getCourse() + "\nGroup: " + getGroup();
+    }
 }
 
 
